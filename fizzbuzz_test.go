@@ -52,12 +52,12 @@ func TestParse15(t *testing.T) {
 	}
 }
 
-func TestParseString(t *testing.T) {
+func TestSequence(t *testing.T) {
 	fizzbuzz := FizzBuzz{}
 
-	result := fizzbuzz.FromString("15")
+	result := fizzbuzz.Sequence(1, 5)
 
-	if result != "FizzBuzz" {
-		t.Error("FizzBuzz parse error", "FizzBuzz", result)
+	if result != "1 2 Fizz 4 Buzz" {
+		t.Error("FizzBuzz sequence error", "1 2 Fizz 4 Buzz", result)
 	}
 }

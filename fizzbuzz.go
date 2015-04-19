@@ -23,8 +23,12 @@ func (_ *FizzBuzz) Parse(i int) string {
 	return strconv.Itoa(i)
 }
 
-func (fizzbuzz *FizzBuzz) FromString(s string) string {
-	i, _ := strconv.Atoi(s)
+func (fb *FizzBuzz) Sequence(start int, end int) string {
+	sequence := fb.Parse(start)
 
-	return fizzbuzz.Parse(i)
+	for i := start+1; i <= end; i++ {
+		sequence = sequence + " " + fb.Parse(i)
+	}
+
+	return sequence
 }

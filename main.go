@@ -3,10 +3,22 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func main() {
-	fizzbuzz := FizzBuzz{}
+	fb := FizzBuzz{}
 
-	fmt.Println(fizzbuzz.FromString(os.Args[1]))
+	if len(os.Args) == 2 {
+		i, _ := strconv.Atoi(os.Args[1])
+		fmt.Println(fb.Parse(i))
+		return
+	}
+
+	if len(os.Args) == 3 {
+		start, _ := strconv.Atoi(os.Args[1])
+		end, _ := strconv.Atoi(os.Args[2])
+		fmt.Println(fb.Sequence(start, end))
+		return
+	}
 }
