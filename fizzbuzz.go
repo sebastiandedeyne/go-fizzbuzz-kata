@@ -7,7 +7,7 @@ import (
 type FizzBuzz struct {
 }
 
-func (fizzbuzz *FizzBuzz) Parse(i int) string {
+func (_ *FizzBuzz) Parse(i int) string {
 	if i%15 == 0 {
 		return "FizzBuzz"
 	}
